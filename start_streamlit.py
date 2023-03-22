@@ -16,7 +16,8 @@ st.set_page_config(page_title='Таблица умножения')
 #footer {visibility: hidden;}
 m = st.markdown("""
 <style>
-
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
 div.stButton > button:first-child {
     background-color: #0099ff;
     color:#ffffff;
@@ -218,7 +219,7 @@ with st.expander("НАСТРОЙКИ"):
     if not mult and not div:
         st.write(':red[необходимо выбрать хотя бы одну операцию умножение или деление]')
     
-    N =st.slider(':blue[Количество примеров:]', 5, 100,5)
+    N =st.slider(':blue[Количество примеров:]', 5, 100,10)
     
     inp = st.selectbox(':blue[Ввод ответа]', ('выбор из четырех предложенных','ввод числа'))
     
