@@ -10,7 +10,7 @@ import pandas as pd
 
 #st.set_page_config(page_title='Таблица умножения', page_icon='🖖')
 st.set_page_config(page_title='Таблица умножения')
-
+st.title('Таблица умножения')
 
 ##MainMenu {visibility: hidden;}
 #footer {visibility: hidden;}
