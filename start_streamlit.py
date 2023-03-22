@@ -33,22 +33,6 @@ div.stButton > button:hover {
 
 </style>""", unsafe_allow_html=True)
 
-#m = st.markdown("""
-#<style>
-# div.stButton > button:first-child {
-#  background-color: #4CAF50;
-#  border: none;
-#  color: white;
-#  padding: 15px 32px;
-#  text-align: center;
-#  text-decoration: none;
-#  display: inline-block;
-#  font-size: 48px;
-#  margin: 4px 2px;
-#  cursor: pointer;
-#  }
-
-#</style>""", unsafe_allow_html=True)
 
 
 
@@ -69,7 +53,7 @@ def mistake_test():
         
     mist = mist.split(',')
     ##бежим по ошибкам
-    print('mist', mist)
+    #print('mist', mist)
     new_zd = []
     for m in mist:
         if not m:
@@ -84,8 +68,8 @@ def mistake_test():
         
         m = m.strip()
         dig = m.split()
-        print('m',m)
-        print('dig', dig)
+        #print('m',m)
+        #print('dig', dig)
         if func == miltiplication:
             a = int(dig[0]) #берем первое число
             b = int(dig[1]) #берем второе число
@@ -98,10 +82,7 @@ def mistake_test():
 
         new_zd.append((a,b,func))
     if len(new_zd)==0:
-        #al='''
-        #window.alert('sdfd');
-        #'''
-        #m = st.markdown(al, unsafe_allow_html=True)
+        
         return
     random.shuffle(new_zd)  #всё перемешаем, чтоб 
     #print(new_zd)
@@ -267,11 +248,7 @@ else:
                 st.session_state.stat["voprosov"] +=1
             
             st.session_state.current_example = vopros #возможно, что пример придется вернуть в очередб
-            #random.shuffle(vopros)
-        
-            #OSTATOK = list(zd[1:])
-            #random.shuffle(OSTATOK)
-            #st.session_state.zadacha = OSTATOK
+       
         
            
             func = vopros[2] #получаем функцию
@@ -323,11 +300,7 @@ else:
                     with column4:  
                         otv3 = st.form_submit_button(use_container_width=True, label = str(candidat[3]), on_click=click_b, args=(q, otv, candidat[3]))
         else:#вопросы закончились, подводим итоги
-            #st.write('Тест завершен')
-            # stat={'good':0, 'wrong':0, 'voprosov':N, 'start_time':start_time,'start_time_cek':start_time_cek, 'mistakes':[], 'numbers':numbers, 'деление':div, 'умножение':mult}
-            #st.header('pfsdfjh')
-            #st.title('title')
-            #st.text('text')
+           
             
             
             #st.title('Всего примеров: '+str(st.session_state.stat['voprosov']))
@@ -355,8 +328,7 @@ else:
             else:
                 st.session_state.big_stat = df_for_big_stat
 
-            #if 'stat' in st.session_state:
-            #    st.write(st.session_state.stat)
+           
             #это жуткий костыль для того, чтобы узнать последнее введенное число
             #выводим форму, получаем ответ и тут же форму стираем...другого способа не нашлось...
             #=========================================================================================================================
